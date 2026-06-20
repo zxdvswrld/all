@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['RL_Basah', 'RL_Kering_Jemur_Langsung', 'RL_Kering_Oven']
+
+roboflow:
+  workspace: kekeringan-rumput-laut
+  project: rumput_laut-dwzfn
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/kekeringan-rumput-laut/rumput_laut-dwzfn/dataset/5
