@@ -1,0 +1,378 @@
+New https://pypi.org/project/ultralytics/8.4.47 available  Update with 'pip install -U ultralytics'
+Ultralytics 8.4.43  Python-3.10.11 torch-2.7.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3050 Laptop GPU, 4096MiB)
+engine\trainer: agnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=4, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=dataset/data.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, end2end=None, epochs=50, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolov8n.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=yolov8n, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=20, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=2, workspace=None
+Overriding model.yaml nc=80 with nc=3
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]             
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]             
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]                  
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]                 
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 22        [15, 18, 21]  1    751897  ultralytics.nn.modules.head.Detect           [3, 16, None, [64, 128, 256]] 
+Model summary: 130 layers, 3,011,433 parameters, 3,011,417 gradients, 8.2 GFLOPs
+
+Transferred 319/355 items from pretrained weights
+Freezing layer 'model.22.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed 
+train: Fast image access  (ping: 0.30.1 ms, read: 4.63.0 MB/s, size: 63.4 KB)
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 57 images, 0 backgrounds, 0 corrupt: 4% ──────────── 57/1383 121.7it/s 0.3s<10.9
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 75 images, 0 backgrounds, 0 corrupt: 5% ╸─────────── 75/1383 119.7it/s 0.5s<10.9
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 103 images, 0 backgrounds, 0 corrupt: 7% ╸─────────── 103/1383 167.6it/s 0.6s<7.
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 117 images, 0 backgrounds, 0 corrupt: 8% ━─────────── 117/1383 159.1it/s 0.7s<8.
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 134 images, 0 backgrounds, 0 corrupt: 10% ━─────────── 134/1383 129.6it/s 1.0s<9
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 179 images, 0 backgrounds, 0 corrupt: 13% ━╸────────── 179/1383 216.7it/s 1.1s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 200 images, 0 backgrounds, 0 corrupt: 14% ━╸────────── 200/1383 213.4it/s 1.2s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 220 images, 0 backgrounds, 0 corrupt: 16% ━╸────────── 220/1383 208.8it/s 1.3s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 233 images, 0 backgrounds, 0 corrupt: 17% ━━────────── 233/1383 182.3it/s 1.4s<6
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 258 images, 0 backgrounds, 0 corrupt: 19% ━━────────── 258/1383 185.1it/s 1.5s<6
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 283 images, 0 backgrounds, 0 corrupt: 20% ━━────────── 283/1383 199.8it/s 1.6s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 306 images, 0 backgrounds, 0 corrupt: 22% ━━╸───────── 306/1383 199.4it/s 1.7s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 325 images, 0 backgrounds, 0 corrupt: 23% ━━╸───────── 325/1383 184.3it/s 1.9s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 347 images, 0 backgrounds, 0 corrupt: 25% ━━━───────── 347/1383 192.2it/s 2.0s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 369 images, 0 backgrounds, 0 corrupt: 27% ━━━───────── 369/1383 198.6it/s 2.1s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 378 images, 0 backgrounds, 0 corrupt: 27% ━━━───────── 378/1383 164.9it/s 2.2s<6
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 404 images, 0 backgrounds, 0 corrupt: 29% ━━━╸──────── 404/1383 191.3it/s 2.3s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 421 images, 0 backgrounds, 0 corrupt: 30% ━━━╸──────── 421/1383 183.5it/s 2.4s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 442 images, 0 backgrounds, 0 corrupt: 32% ━━━╸──────── 442/1383 188.4it/s 2.5s<5
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 464 images, 0 backgrounds, 0 corrupt: 34% ━━━━──────── 464/1383 190.5it/s 2.6s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 485 images, 0 backgrounds, 0 corrupt: 35% ━━━━──────── 485/1383 192.2it/s 2.7s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 505 images, 0 backgrounds, 0 corrupt: 37% ━━━━──────── 505/1383 193.6it/s 2.8s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 526 images, 0 backgrounds, 0 corrupt: 38% ━━━━╸─────── 526/1383 198.2it/s 2.9s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 542 images, 0 backgrounds, 0 corrupt: 39% ━━━━╸─────── 542/1383 183.3it/s 3.0s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 566 images, 0 backgrounds, 0 corrupt: 41% ━━━━╸─────── 566/1383 193.7it/s 3.1s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 582 images, 0 backgrounds, 0 corrupt: 42% ━━━━━─────── 582/1383 183.3it/s 3.2s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 605 images, 0 backgrounds, 0 corrupt: 44% ━━━━━─────── 605/1383 189.4it/s 3.3s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 629 images, 0 backgrounds, 0 corrupt: 45% ━━━━━─────── 629/1383 200.8it/s 3.4s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 648 images, 0 backgrounds, 0 corrupt: 47% ━━━━━╸────── 648/1383 176.4it/s 3.6s<4
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 680 images, 0 backgrounds, 0 corrupt: 49% ━━━━━╸────── 680/1383 209.9it/s 3.7s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 700 images, 0 backgrounds, 0 corrupt: 51% ━━━━━━────── 700/1383 205.1it/s 3.8s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 724 images, 0 backgrounds, 0 corrupt: 52% ━━━━━━────── 724/1383 208.7it/s 3.9s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 744 images, 0 backgrounds, 0 corrupt: 54% ━━━━━━────── 744/1383 201.8it/s 4.0s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 768 images, 0 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 768/1383 206.4it/s 4.1s<3
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 792 images, 0 backgrounds, 0 corrupt: 57% ━━━━━━╸───── 792/1383 207.5it/s 4.3s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 812 images, 0 backgrounds, 0 corrupt: 59% ━━━━━━━───── 812/1383 202.5it/s 4.4s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 832 images, 0 backgrounds, 0 corrupt: 60% ━━━━━━━───── 832/1383 198.5it/s 4.5s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 849 images, 0 backgrounds, 0 corrupt: 61% ━━━━━━━───── 849/1383 183.7it/s 4.6s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 875 images, 0 backgrounds, 0 corrupt: 63% ━━━━━━━╸──── 875/1383 200.7it/s 4.7s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 894 images, 0 backgrounds, 0 corrupt: 65% ━━━━━━━╸──── 894/1383 180.5it/s 4.8s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 922 images, 0 backgrounds, 0 corrupt: 67% ━━━━━━━━──── 922/1383 208.8it/s 4.9s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 944 images, 0 backgrounds, 0 corrupt: 68% ━━━━━━━━──── 944/1383 208.2it/s 5.0s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 967 images, 0 backgrounds, 0 corrupt: 70% ━━━━━━━━──── 967/1383 214.7it/s 5.1s<1
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 980 images, 0 backgrounds, 0 corrupt: 71% ━━━━━━━━╸─── 980/1383 180.2it/s 5.3s<2
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1012 images, 0 backgrounds, 0 corrupt: 73% ━━━━━━━━╸─── 1012/1383 215.0it/s 5.4s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1035 images, 0 backgrounds, 0 corrupt: 75% ━━━━━━━━╸─── 1035/1383 212.0it/s 5.5s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1059 images, 0 backgrounds, 0 corrupt: 77% ━━━━━━━━━─── 1059/1383 216.5it/s 5.6s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1079 images, 0 backgrounds, 0 corrupt: 78% ━━━━━━━━━─── 1079/1383 211.2it/s 5.7s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1100 images, 0 backgrounds, 0 corrupt: 80% ━━━━━━━━━╸── 1100/1383 205.4it/s 5.8s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1121 images, 0 backgrounds, 0 corrupt: 81% ━━━━━━━━━╸── 1121/1383 202.5it/s 5.9s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1136 images, 0 backgrounds, 0 corrupt: 82% ━━━━━━━━━╸── 1136/1383 174.0it/s 6.1s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1148 images, 0 backgrounds, 0 corrupt: 83% ━━━━━━━━━╸── 1148/1383 156.7it/s 6.2s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1176 images, 0 backgrounds, 0 corrupt: 85% ━━━━━━━━━━── 1176/1383 193.5it/s 6.3s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1194 images, 0 backgrounds, 0 corrupt: 86% ━━━━━━━━━━── 1194/1383 175.9it/s 6.4s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1215 images, 0 backgrounds, 0 corrupt: 88% ━━━━━━━━━━╸─ 1215/1383 181.2it/s 6.5s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1233 images, 0 backgrounds, 0 corrupt: 89% ━━━━━━━━━━╸─ 1233/1383 169.1it/s 6.6s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1259 images, 0 backgrounds, 0 corrupt: 91% ━━━━━━━━━━╸─ 1259/1383 189.3it/s 6.7s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1276 images, 0 backgrounds, 0 corrupt: 92% ━━━━━━━━━━━─ 1276/1383 183.0it/s 6.8s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1297 images, 0 backgrounds, 0 corrupt: 94% ━━━━━━━━━━━─ 1297/1383 182.6it/s 7.0s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1323 images, 0 backgrounds, 0 corrupt: 96% ━━━━━━━━━━━─ 1323/1383 202.8it/s 7.1s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1346 images, 0 backgrounds, 0 corrupt: 97% ━━━━━━━━━━━╸ 1346/1383 190.7it/s 7.2s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1370 images, 0 backgrounds, 0 corrupt: 99% ━━━━━━━━━━━╸ 1370/1383 202.9it/s 7.3s
+train: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels... 1383 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1383/1383 188.3it/s 7.3s
+train: New cache created: D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\train\labels.cache
+WARNING Box and segment counts should be equal, but got len(segments) = 20, len(boxes) = 1383. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+val: Fast image access  (ping: 0.50.1 ms, read: 4.42.2 MB/s, size: 64.2 KB)
+val: Scanning D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\valid\labels... 75 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 75/75 170.9it/s 0.4s
+val: New cache created: D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\dataset\valid\labels.cache
+WARNING Box and segment counts should be equal, but got len(segments) = 1, len(boxes) = 75. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+optimizer: AdamW(lr=0.001429, momentum=0.9) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+Plotting labels to D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n\labels.jpg... 
+Image sizes 640 train, 640 val
+Using 2 dataloader workers
+Logging results to D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n
+Starting training for 50 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/50      0.59G      0.853      1.955      1.274          7        640: 100% ━━━━━━━━━━━━ 346/346 5.3it/s 1:06
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 5.9it/s 1.7s
+                   all         75         75      0.637      0.816      0.839      0.692
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/50     0.668G     0.8644      1.373       1.26          6        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.3it/s 1.2s
+                   all         75         75       0.96      0.976      0.992      0.869
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/50     0.689G     0.8515      1.143      1.224          5        640: 100% ━━━━━━━━━━━━ 346/346 5.6it/s 1:02
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.3it/s 1.4s
+                   all         75         75      0.951      0.914       0.98      0.835
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/50     0.711G     0.8427     0.9724      1.215          7        640: 100% ━━━━━━━━━━━━ 346/346 5.6it/s 1:02
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.2it/s 1.4s
+                   all         75         75      0.975      0.984      0.994      0.857
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/50     0.732G     0.8107     0.8663        1.2          3        640: 100% ━━━━━━━━━━━━ 346/346 5.5it/s 1:03
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.9it/s 1.3s
+                   all         75         75      0.939      0.953      0.955      0.841
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/50     0.754G     0.7976     0.8039      1.197          5        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.1it/s 1.2s
+                   all         75         75      0.708      0.883      0.947      0.835
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/50     0.775G       0.77       0.72      1.157          7        640: 100% ━━━━━━━━━━━━ 346/346 5.3it/s 1:05
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 5.8it/s 1.7s
+                   all         75         75      0.973      0.979      0.995       0.89
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/50     0.797G     0.7552     0.7169      1.165          9        640: 100% ━━━━━━━━━━━━ 346/346 4.4it/s 1:19
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 5.9it/s 1.7s
+                   all         75         75      0.947      0.911       0.97      0.885
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/50     0.818G       0.72     0.6447      1.145          5        640: 100% ━━━━━━━━━━━━ 346/346 4.3it/s 1:20
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 6.5it/s 1.5s
+                   all         75         75      0.974      0.985      0.995      0.895
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/50      0.84G     0.7244     0.6059      1.134          7        640: 100% ━━━━━━━━━━━━ 346/346 4.4it/s 1:18
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 6.0it/s 1.7s
+                   all         75         75      0.962       0.96      0.986      0.884
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      11/50     0.861G     0.7067     0.5963      1.137          9        640: 100% ━━━━━━━━━━━━ 346/346 4.4it/s 1:18
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 6.3it/s 1.6s
+                   all         75         75      0.995          1      0.995      0.907
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      12/50     0.883G     0.7077     0.5461      1.136          4        640: 100% ━━━━━━━━━━━━ 346/346 4.5it/s 1:17
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.3it/s 1.4s
+                   all         75         75      0.955      0.988      0.995      0.931
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      13/50     0.904G     0.6908     0.5346      1.122          6        640: 100% ━━━━━━━━━━━━ 346/346 5.4it/s 1:03
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.995      0.998      0.995      0.922
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      14/50     0.926G      0.684     0.5772      1.113          5        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.7s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.9it/s 1.3s
+                   all         75         75      0.994          1      0.995      0.915
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      15/50     0.949G     0.6534     0.5163      1.111          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.7s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.6it/s 1.2s
+                   all         75         75      0.994          1      0.995      0.923
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      16/50     0.971G      0.667     0.5104       1.12         12        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.9s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.9it/s 1.1s
+                   all         75         75      0.994          1      0.995      0.927
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      17/50      0.99G     0.6595     0.4982      1.107          6        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.4s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.6it/s 1.3s
+                   all         75         75      0.986          1      0.995      0.916
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      18/50      1.01G     0.6278     0.4938      1.097          4        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.5s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.3it/s 1.2s
+                   all         75         75      0.989          1      0.995      0.934
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      19/50      1.04G     0.6444     0.4803      1.106          4        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.5s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.3it/s 1.2s
+                   all         75         75      0.995          1      0.995      0.913
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      20/50      1.06G     0.6292     0.4825      1.094          5        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.7s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.1it/s 1.2s
+                   all         75         75      0.996          1      0.995      0.939
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      21/50      1.08G     0.6292     0.4773      1.085          7        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.9s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.988      0.979      0.995      0.927
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      22/50       1.1G     0.6561     0.4693      1.118          6        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.3s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.5it/s 1.2s
+                   all         75         75      0.991      0.991      0.995      0.937
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      23/50      1.12G     0.6157     0.4425      1.081          6        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 58.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.6it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.932
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      24/50      1.14G      0.607     0.4236       1.08          7        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.5it/s 1.2s
+                   all         75         75      0.991      0.998      0.995      0.937
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      25/50      1.16G      0.631     0.4556      1.101          4        640: 100% ━━━━━━━━━━━━ 346/346 5.7it/s 1:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.4it/s 1.2s
+                   all         75         75      0.982          1      0.995      0.937
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      26/50      1.19G     0.5967     0.4509      1.078          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.7s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.996          1      0.995      0.947
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      27/50      1.21G      0.579      0.423      1.066          8        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.996          1      0.995      0.941
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      28/50      1.23G     0.5941     0.4188       1.08          6        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.3s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.7it/s 1.1s
+                   all         75         75      0.996          1      0.995      0.943
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      29/50      1.25G     0.6007     0.4057       1.08          6        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.8s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.6it/s 1.2s
+                   all         75         75      0.996          1      0.995      0.937
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      30/50      1.27G      0.591     0.3985      1.076          4        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.4s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.997          1      0.995      0.946
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      31/50      1.29G     0.5882     0.3997      1.067          4        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.2s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.0it/s 1.2s
+                   all         75         75      0.994          1      0.995      0.934
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      32/50      1.31G     0.5778     0.3946      1.062          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.5s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.0it/s 1.2s
+                   all         75         75      0.996          1      0.995      0.946
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      33/50      1.34G     0.5777     0.3847      1.062          9        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.9s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.993      0.993      0.995      0.952
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      34/50      1.36G     0.5878     0.3959      1.084          4        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.2s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.5it/s 1.2s
+                   all         75         75      0.996          1      0.995      0.945
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      35/50      1.38G     0.5553     0.3781      1.047          5        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.9s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.9it/s 1.3s
+                   all         75         75      0.986      0.984      0.995      0.944
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      36/50       1.4G     0.5652     0.3689      1.065          4        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.3s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.0it/s 1.3s
+                   all         75         75      0.997          1      0.995      0.955
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      37/50      1.42G     0.5713      0.382      1.068          3        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.4s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.996          1      0.995      0.944
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      38/50      1.45G      0.555     0.3577      1.057          7        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.9s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.9it/s 1.3s
+                   all         75         75      0.976      0.999      0.995       0.95
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      39/50      1.47G     0.5643     0.3685      1.066          9        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.2s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.5it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.947
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      40/50      1.49G      0.549     0.3587      1.056          6        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.5s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.966
+Closing dataloader mosaic
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      41/50      1.51G     0.2884     0.2196     0.8462          3        640: 100% ━━━━━━━━━━━━ 346/346 5.8it/s 59.5s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.998          1      0.995      0.955
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      42/50      1.53G     0.2891     0.2186     0.8485          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 59.1s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.9it/s 1.3s
+                   all         75         75      0.997          1      0.995       0.96
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      43/50      1.55G      0.285     0.2107     0.8459          3        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 58.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.4it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.957
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      44/50      1.57G     0.2776     0.2041     0.8451          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.3s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.0it/s 1.3s
+                   all         75         75      0.997          1      0.995      0.969
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      45/50      1.59G      0.267     0.1838     0.8324          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 59.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.958
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      46/50      1.62G      0.263     0.1804     0.8284          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.3it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.961
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      47/50      1.64G     0.2585     0.1818     0.8252          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 58.7s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.8it/s 1.1s
+                   all         75         75      0.997          1      0.995      0.967
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      48/50      1.66G     0.2546      0.175     0.8283          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 59.1s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.2it/s 1.2s
+                   all         75         75      0.997          1      0.995      0.962
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      49/50      1.68G     0.2524     0.1737     0.8233          3        640: 100% ━━━━━━━━━━━━ 346/346 5.9it/s 59.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 8.0it/s 1.3s
+                   all         75         75      0.997          1      0.995      0.963
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      50/50       1.7G     0.2447     0.1661     0.8232          3        640: 100% ━━━━━━━━━━━━ 346/346 6.0it/s 57.3s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 7.8it/s 1.3s
+                   all         75         75      0.998          1      0.995       0.96
+
+50 epochs completed in 0.888 hours.
+Optimizer stripped from D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n\weights\last.pt, 6.3MB
+Optimizer stripped from D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n\weights\best.pt, 6.3MB
+
+Validating D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n\weights\best.pt...
+Ultralytics 8.4.43  Python-3.10.11 torch-2.7.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3050 Laptop GPU, 4096MiB)
+Model summary (fused): 73 layers, 3,006,233 parameters, 0 gradients, 8.1 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 6.2it/s 1.6s
+                   all         75         75      0.997          1      0.995      0.969
+              RL_Basah         26         26      0.997          1      0.995      0.978
+RL_Kering_Jemur_Langsung         32         32      0.998          1      0.995      0.966
+        RL_Kering_Oven         17         17      0.996          1      0.995      0.964
+Speed: 0.7ms preprocess, 8.2ms inference, 0.0ms loss, 3.1ms postprocess per image
+Results saved to D:\KULIAH\SEMESTER_8\SKRIPSIP_ZIDAN\all\runs\detect\yolov8n
